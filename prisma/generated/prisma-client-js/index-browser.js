@@ -96,6 +96,19 @@ exports.Prisma.TaskScalarFieldEnum = makeEnum({
   updatedAt: 'updatedAt'
 });
 
+exports.Prisma.UserAccountScalarFieldEnum = makeEnum({
+  uuid: 'uuid',
+  firstName: 'firstName',
+  lastName: 'lastName',
+  email: 'email'
+});
+
+exports.Prisma.UserIdentityScalarFieldEnum = makeEnum({
+  uuid: 'uuid',
+  email: 'email',
+  password: 'password'
+});
+
 exports.Prisma.SortOrder = makeEnum({
   asc: 'asc',
   desc: 'desc'
@@ -108,7 +121,9 @@ exports.Prisma.QueryMode = makeEnum({
 
 
 exports.Prisma.ModelName = makeEnum({
-  Task: 'Task'
+  Task: 'Task',
+  UserAccount: 'UserAccount',
+  UserIdentity: 'UserIdentity'
 });
 
 /**

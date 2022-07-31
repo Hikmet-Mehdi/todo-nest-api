@@ -1,0 +1,39 @@
+import { Field } from '@nestjs/graphql';
+import { ArgsType } from '@nestjs/graphql';
+import { UserIdentityWhereInput } from './user-identity-where.input';
+import { Type } from 'class-transformer';
+import { UserIdentityOrderByWithRelationInput } from './user-identity-order-by-with-relation.input';
+import { UserIdentityWhereUniqueInput } from './user-identity-where-unique.input';
+import { Int } from '@nestjs/graphql';
+import { UserIdentityCountAggregateInput } from './user-identity-count-aggregate.input';
+import { UserIdentityMinAggregateInput } from './user-identity-min-aggregate.input';
+import { UserIdentityMaxAggregateInput } from './user-identity-max-aggregate.input';
+
+@ArgsType()
+export class UserIdentityAggregateArgs {
+
+    @Field(() => UserIdentityWhereInput, {nullable:true})
+    @Type(() => UserIdentityWhereInput)
+    where?: UserIdentityWhereInput;
+
+    @Field(() => [UserIdentityOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<UserIdentityOrderByWithRelationInput>;
+
+    @Field(() => UserIdentityWhereUniqueInput, {nullable:true})
+    cursor?: UserIdentityWhereUniqueInput;
+
+    @Field(() => Int, {nullable:true})
+    take?: number;
+
+    @Field(() => Int, {nullable:true})
+    skip?: number;
+
+    @Field(() => UserIdentityCountAggregateInput, {nullable:true})
+    _count?: UserIdentityCountAggregateInput;
+
+    @Field(() => UserIdentityMinAggregateInput, {nullable:true})
+    _min?: UserIdentityMinAggregateInput;
+
+    @Field(() => UserIdentityMaxAggregateInput, {nullable:true})
+    _max?: UserIdentityMaxAggregateInput;
+}
