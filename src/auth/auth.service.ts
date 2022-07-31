@@ -9,9 +9,21 @@ export class AuthService {
     private usersService: UsersService,
     private readonly prisma: PrismaService,
   ) {}
-  async validateUser(email: string, password: string) {
+  async validateUser(
+    email: string,
+    password: string,
+  ): Promise<UserAccount | null> {
     const user = await this.usersService.findOne({ email });
-  }
+    const userIdentity = await this.prisma.userIdentity.findFirst({
+      where: {
+        email,
+      },
+    });
 
-  async findUserIdentity() {}
+    if (userIdentity.password !== password) {
+      return null;
+    }
+
+    return user;
+  }
 }
