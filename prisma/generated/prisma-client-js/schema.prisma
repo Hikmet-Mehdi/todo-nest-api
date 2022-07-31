@@ -7,13 +7,12 @@ generator client {
 }
 
 generator nestgraphql {
-    provider = "node node_modules/prisma-nestjs-graphql"
-    // for yarn monorepos
-    // provider = "prisma-nestjs-graphql"
-    reExport = All
-    output = "../src/@generated"
-    combineScalarFilters = true
-    requireSingleFieldsInWhereUniqueInput = true
+  provider                              = "node node_modules/prisma-nestjs-graphql"
+  // for yarn monorepos
+  // provider = "prisma-nestjs-graphql"
+  reExport                              = All
+  output                                = "../src/@generated"
+  requireSingleFieldsInWhereUniqueInput = true
 }
 
 datasource db {
@@ -33,21 +32,29 @@ datasource db {
 // }
 
 model Task {
-  uuid          String    @id @default(uuid())
-  title         String
-  description   String?
-  code          String
-  createdAt     DateTime  @default(now()) @map("created_at")
-  updatedAt     DateTime  @updatedAt @map("updated_at")
+  uuid        String   @id @default(uuid())
+  title       String
+  description String?
+  code        String
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
 
   @@map("tasks")
 }
 
-// model UserAccount {
-//   uuid      String @id @default(uuid())
-//   firstName String @map("first_name")
-//   lastName  String @map("last_name")
-//   email     String @unique
-  
-//   @@map("user_account")
-// }
+model UserAccount {
+  uuid      String @id @default(uuid())
+  firstName String @map("first_name")
+  lastName  String @map("last_name")
+  email     String @unique
+
+  @@map("user_accounts")
+}
+
+model UserIdentity {
+  uuid     String @id @default(uuid())
+  email    String @unique
+  password String
+
+  @@map("user_identities")
+}
