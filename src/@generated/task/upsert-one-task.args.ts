@@ -7,16 +7,15 @@ import { TaskUpdateInput } from './task-update.input';
 
 @ArgsType()
 export class UpsertOneTaskArgs {
+  @Field(() => TaskWhereUniqueInput, { nullable: false })
+  @Type(() => TaskWhereUniqueInput)
+  where!: TaskWhereUniqueInput;
 
-    @Field(() => TaskWhereUniqueInput, {nullable:false})
-    @Type(() => TaskWhereUniqueInput)
-    where!: TaskWhereUniqueInput;
+  @Field(() => TaskCreateInput, { nullable: false })
+  @Type(() => TaskCreateInput)
+  create!: TaskCreateInput;
 
-    @Field(() => TaskCreateInput, {nullable:false})
-    @Type(() => TaskCreateInput)
-    create!: TaskCreateInput;
-
-    @Field(() => TaskUpdateInput, {nullable:false})
-    @Type(() => TaskUpdateInput)
-    update!: TaskUpdateInput;
+  @Field(() => TaskUpdateInput, { nullable: false })
+  @Type(() => TaskUpdateInput)
+  update!: TaskUpdateInput;
 }

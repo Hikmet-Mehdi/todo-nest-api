@@ -6,12 +6,11 @@ import { UserAccountWhereUniqueInput } from './user-account-where-unique.input';
 
 @ArgsType()
 export class UpdateOneUserAccountArgs {
+  @Field(() => UserAccountUpdateInput, { nullable: false })
+  @Type(() => UserAccountUpdateInput)
+  data!: UserAccountUpdateInput;
 
-    @Field(() => UserAccountUpdateInput, {nullable:false})
-    @Type(() => UserAccountUpdateInput)
-    data!: UserAccountUpdateInput;
-
-    @Field(() => UserAccountWhereUniqueInput, {nullable:false})
-    @Type(() => UserAccountWhereUniqueInput)
-    where!: UserAccountWhereUniqueInput;
+  @Field(() => UserAccountWhereUniqueInput, { nullable: false })
+  @Type(() => UserAccountWhereUniqueInput)
+  where!: UserAccountWhereUniqueInput;
 }

@@ -7,16 +7,15 @@ import { UserIdentityUpdateInput } from './user-identity-update.input';
 
 @ArgsType()
 export class UpsertOneUserIdentityArgs {
+  @Field(() => UserIdentityWhereUniqueInput, { nullable: false })
+  @Type(() => UserIdentityWhereUniqueInput)
+  where!: UserIdentityWhereUniqueInput;
 
-    @Field(() => UserIdentityWhereUniqueInput, {nullable:false})
-    @Type(() => UserIdentityWhereUniqueInput)
-    where!: UserIdentityWhereUniqueInput;
+  @Field(() => UserIdentityCreateInput, { nullable: false })
+  @Type(() => UserIdentityCreateInput)
+  create!: UserIdentityCreateInput;
 
-    @Field(() => UserIdentityCreateInput, {nullable:false})
-    @Type(() => UserIdentityCreateInput)
-    create!: UserIdentityCreateInput;
-
-    @Field(() => UserIdentityUpdateInput, {nullable:false})
-    @Type(() => UserIdentityUpdateInput)
-    update!: UserIdentityUpdateInput;
+  @Field(() => UserIdentityUpdateInput, { nullable: false })
+  @Type(() => UserIdentityUpdateInput)
+  update!: UserIdentityUpdateInput;
 }

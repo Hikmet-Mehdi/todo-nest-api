@@ -7,22 +7,21 @@ import { UserIdentityMinOrderByAggregateInput } from './user-identity-min-order-
 
 @InputType()
 export class UserIdentityOrderByWithAggregationInput {
+  @Field(() => SortOrder, { nullable: true })
+  uuid?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    uuid?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  email?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    email?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  password?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    password?: keyof typeof SortOrder;
+  @Field(() => UserIdentityCountOrderByAggregateInput, { nullable: true })
+  _count?: UserIdentityCountOrderByAggregateInput;
 
-    @Field(() => UserIdentityCountOrderByAggregateInput, {nullable:true})
-    _count?: UserIdentityCountOrderByAggregateInput;
+  @Field(() => UserIdentityMaxOrderByAggregateInput, { nullable: true })
+  _max?: UserIdentityMaxOrderByAggregateInput;
 
-    @Field(() => UserIdentityMaxOrderByAggregateInput, {nullable:true})
-    _max?: UserIdentityMaxOrderByAggregateInput;
-
-    @Field(() => UserIdentityMinOrderByAggregateInput, {nullable:true})
-    _min?: UserIdentityMinOrderByAggregateInput;
+  @Field(() => UserIdentityMinOrderByAggregateInput, { nullable: true })
+  _min?: UserIdentityMinOrderByAggregateInput;
 }

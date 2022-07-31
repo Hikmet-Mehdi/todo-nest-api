@@ -11,29 +11,28 @@ import { UserIdentityMaxAggregateInput } from './user-identity-max-aggregate.inp
 
 @ArgsType()
 export class UserIdentityAggregateArgs {
+  @Field(() => UserIdentityWhereInput, { nullable: true })
+  @Type(() => UserIdentityWhereInput)
+  where?: UserIdentityWhereInput;
 
-    @Field(() => UserIdentityWhereInput, {nullable:true})
-    @Type(() => UserIdentityWhereInput)
-    where?: UserIdentityWhereInput;
+  @Field(() => [UserIdentityOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<UserIdentityOrderByWithRelationInput>;
 
-    @Field(() => [UserIdentityOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<UserIdentityOrderByWithRelationInput>;
+  @Field(() => UserIdentityWhereUniqueInput, { nullable: true })
+  cursor?: UserIdentityWhereUniqueInput;
 
-    @Field(() => UserIdentityWhereUniqueInput, {nullable:true})
-    cursor?: UserIdentityWhereUniqueInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => UserIdentityCountAggregateInput, { nullable: true })
+  _count?: UserIdentityCountAggregateInput;
 
-    @Field(() => UserIdentityCountAggregateInput, {nullable:true})
-    _count?: UserIdentityCountAggregateInput;
+  @Field(() => UserIdentityMinAggregateInput, { nullable: true })
+  _min?: UserIdentityMinAggregateInput;
 
-    @Field(() => UserIdentityMinAggregateInput, {nullable:true})
-    _min?: UserIdentityMinAggregateInput;
-
-    @Field(() => UserIdentityMaxAggregateInput, {nullable:true})
-    _max?: UserIdentityMaxAggregateInput;
+  @Field(() => UserIdentityMaxAggregateInput, { nullable: true })
+  _max?: UserIdentityMaxAggregateInput;
 }

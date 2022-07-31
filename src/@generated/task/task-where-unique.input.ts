@@ -3,7 +3,6 @@ import { InputType } from '@nestjs/graphql';
 
 @InputType()
 export class TaskWhereUniqueInput {
-
-    @Field(() => String, {nullable:false})
-    uuid!: string;
+  @Field(() => String, { nullable: false })
+  uuid!: string;
 }

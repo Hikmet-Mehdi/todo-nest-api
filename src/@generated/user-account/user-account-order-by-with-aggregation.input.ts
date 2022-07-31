@@ -7,25 +7,24 @@ import { UserAccountMinOrderByAggregateInput } from './user-account-min-order-by
 
 @InputType()
 export class UserAccountOrderByWithAggregationInput {
+  @Field(() => SortOrder, { nullable: true })
+  uuid?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    uuid?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  firstName?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    firstName?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  lastName?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    lastName?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  email?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    email?: keyof typeof SortOrder;
+  @Field(() => UserAccountCountOrderByAggregateInput, { nullable: true })
+  _count?: UserAccountCountOrderByAggregateInput;
 
-    @Field(() => UserAccountCountOrderByAggregateInput, {nullable:true})
-    _count?: UserAccountCountOrderByAggregateInput;
+  @Field(() => UserAccountMaxOrderByAggregateInput, { nullable: true })
+  _max?: UserAccountMaxOrderByAggregateInput;
 
-    @Field(() => UserAccountMaxOrderByAggregateInput, {nullable:true})
-    _max?: UserAccountMaxOrderByAggregateInput;
-
-    @Field(() => UserAccountMinOrderByAggregateInput, {nullable:true})
-    _min?: UserAccountMinOrderByAggregateInput;
+  @Field(() => UserAccountMinOrderByAggregateInput, { nullable: true })
+  _min?: UserAccountMinOrderByAggregateInput;
 }

@@ -12,32 +12,31 @@ import { UserIdentityMaxAggregateInput } from './user-identity-max-aggregate.inp
 
 @ArgsType()
 export class UserIdentityGroupByArgs {
+  @Field(() => UserIdentityWhereInput, { nullable: true })
+  @Type(() => UserIdentityWhereInput)
+  where?: UserIdentityWhereInput;
 
-    @Field(() => UserIdentityWhereInput, {nullable:true})
-    @Type(() => UserIdentityWhereInput)
-    where?: UserIdentityWhereInput;
+  @Field(() => [UserIdentityOrderByWithAggregationInput], { nullable: true })
+  orderBy?: Array<UserIdentityOrderByWithAggregationInput>;
 
-    @Field(() => [UserIdentityOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<UserIdentityOrderByWithAggregationInput>;
+  @Field(() => [UserIdentityScalarFieldEnum], { nullable: false })
+  by!: Array<keyof typeof UserIdentityScalarFieldEnum>;
 
-    @Field(() => [UserIdentityScalarFieldEnum], {nullable:false})
-    by!: Array<keyof typeof UserIdentityScalarFieldEnum>;
+  @Field(() => UserIdentityScalarWhereWithAggregatesInput, { nullable: true })
+  having?: UserIdentityScalarWhereWithAggregatesInput;
 
-    @Field(() => UserIdentityScalarWhereWithAggregatesInput, {nullable:true})
-    having?: UserIdentityScalarWhereWithAggregatesInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => UserIdentityCountAggregateInput, { nullable: true })
+  _count?: UserIdentityCountAggregateInput;
 
-    @Field(() => UserIdentityCountAggregateInput, {nullable:true})
-    _count?: UserIdentityCountAggregateInput;
+  @Field(() => UserIdentityMinAggregateInput, { nullable: true })
+  _min?: UserIdentityMinAggregateInput;
 
-    @Field(() => UserIdentityMinAggregateInput, {nullable:true})
-    _min?: UserIdentityMinAggregateInput;
-
-    @Field(() => UserIdentityMaxAggregateInput, {nullable:true})
-    _max?: UserIdentityMaxAggregateInput;
+  @Field(() => UserIdentityMaxAggregateInput, { nullable: true })
+  _max?: UserIdentityMaxAggregateInput;
 }

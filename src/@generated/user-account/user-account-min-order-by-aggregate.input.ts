@@ -4,16 +4,15 @@ import { SortOrder } from '../prisma/sort-order.enum';
 
 @InputType()
 export class UserAccountMinOrderByAggregateInput {
+  @Field(() => SortOrder, { nullable: true })
+  uuid?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    uuid?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  firstName?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    firstName?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  lastName?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    lastName?: keyof typeof SortOrder;
-
-    @Field(() => SortOrder, {nullable:true})
-    email?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  email?: keyof typeof SortOrder;
 }

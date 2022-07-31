@@ -3,25 +3,24 @@ import { InputType } from '@nestjs/graphql';
 
 @InputType()
 export class TaskCountAggregateInput {
+  @Field(() => Boolean, { nullable: true })
+  uuid?: true;
 
-    @Field(() => Boolean, {nullable:true})
-    uuid?: true;
+  @Field(() => Boolean, { nullable: true })
+  title?: true;
 
-    @Field(() => Boolean, {nullable:true})
-    title?: true;
+  @Field(() => Boolean, { nullable: true })
+  description?: true;
 
-    @Field(() => Boolean, {nullable:true})
-    description?: true;
+  @Field(() => Boolean, { nullable: true })
+  code?: true;
 
-    @Field(() => Boolean, {nullable:true})
-    code?: true;
+  @Field(() => Boolean, { nullable: true })
+  createdAt?: true;
 
-    @Field(() => Boolean, {nullable:true})
-    createdAt?: true;
+  @Field(() => Boolean, { nullable: true })
+  updatedAt?: true;
 
-    @Field(() => Boolean, {nullable:true})
-    updatedAt?: true;
-
-    @Field(() => Boolean, {nullable:true})
-    _all?: true;
+  @Field(() => Boolean, { nullable: true })
+  _all?: true;
 }

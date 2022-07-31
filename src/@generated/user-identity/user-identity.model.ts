@@ -4,13 +4,12 @@ import { ID } from '@nestjs/graphql';
 
 @ObjectType()
 export class UserIdentity {
+  @Field(() => ID, { nullable: false })
+  uuid!: string;
 
-    @Field(() => ID, {nullable:false})
-    uuid!: string;
+  @Field(() => String, { nullable: false })
+  email!: string;
 
-    @Field(() => String, {nullable:false})
-    email!: string;
-
-    @Field(() => String, {nullable:false})
-    password!: string;
+  @Field(() => String, { nullable: false })
+  password!: string;
 }

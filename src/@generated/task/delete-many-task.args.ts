@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteManyTaskArgs {
-
-    @Field(() => TaskWhereInput, {nullable:true})
-    @Type(() => TaskWhereInput)
-    where?: TaskWhereInput;
+  @Field(() => TaskWhereInput, { nullable: true })
+  @Type(() => TaskWhereInput)
+  where?: TaskWhereInput;
 }

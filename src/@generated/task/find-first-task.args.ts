@@ -9,23 +9,22 @@ import { TaskScalarFieldEnum } from './task-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstTaskArgs {
+  @Field(() => TaskWhereInput, { nullable: true })
+  @Type(() => TaskWhereInput)
+  where?: TaskWhereInput;
 
-    @Field(() => TaskWhereInput, {nullable:true})
-    @Type(() => TaskWhereInput)
-    where?: TaskWhereInput;
+  @Field(() => [TaskOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<TaskOrderByWithRelationInput>;
 
-    @Field(() => [TaskOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<TaskOrderByWithRelationInput>;
+  @Field(() => TaskWhereUniqueInput, { nullable: true })
+  cursor?: TaskWhereUniqueInput;
 
-    @Field(() => TaskWhereUniqueInput, {nullable:true})
-    cursor?: TaskWhereUniqueInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [TaskScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof TaskScalarFieldEnum>;
+  @Field(() => [TaskScalarFieldEnum], { nullable: true })
+  distinct?: Array<keyof typeof TaskScalarFieldEnum>;
 }

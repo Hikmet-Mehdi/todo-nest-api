@@ -9,23 +9,22 @@ import { UserAccountScalarFieldEnum } from './user-account-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstUserAccountArgs {
+  @Field(() => UserAccountWhereInput, { nullable: true })
+  @Type(() => UserAccountWhereInput)
+  where?: UserAccountWhereInput;
 
-    @Field(() => UserAccountWhereInput, {nullable:true})
-    @Type(() => UserAccountWhereInput)
-    where?: UserAccountWhereInput;
+  @Field(() => [UserAccountOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<UserAccountOrderByWithRelationInput>;
 
-    @Field(() => [UserAccountOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<UserAccountOrderByWithRelationInput>;
+  @Field(() => UserAccountWhereUniqueInput, { nullable: true })
+  cursor?: UserAccountWhereUniqueInput;
 
-    @Field(() => UserAccountWhereUniqueInput, {nullable:true})
-    cursor?: UserAccountWhereUniqueInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [UserAccountScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof UserAccountScalarFieldEnum>;
+  @Field(() => [UserAccountScalarFieldEnum], { nullable: true })
+  distinct?: Array<keyof typeof UserAccountScalarFieldEnum>;
 }

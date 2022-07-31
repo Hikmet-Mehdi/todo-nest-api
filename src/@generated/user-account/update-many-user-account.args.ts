@@ -6,12 +6,11 @@ import { UserAccountWhereInput } from './user-account-where.input';
 
 @ArgsType()
 export class UpdateManyUserAccountArgs {
+  @Field(() => UserAccountUpdateManyMutationInput, { nullable: false })
+  @Type(() => UserAccountUpdateManyMutationInput)
+  data!: UserAccountUpdateManyMutationInput;
 
-    @Field(() => UserAccountUpdateManyMutationInput, {nullable:false})
-    @Type(() => UserAccountUpdateManyMutationInput)
-    data!: UserAccountUpdateManyMutationInput;
-
-    @Field(() => UserAccountWhereInput, {nullable:true})
-    @Type(() => UserAccountWhereInput)
-    where?: UserAccountWhereInput;
+  @Field(() => UserAccountWhereInput, { nullable: true })
+  @Type(() => UserAccountWhereInput)
+  where?: UserAccountWhereInput;
 }

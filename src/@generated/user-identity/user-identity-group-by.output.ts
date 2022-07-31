@@ -6,22 +6,21 @@ import { UserIdentityMaxAggregate } from './user-identity-max-aggregate.output';
 
 @ObjectType()
 export class UserIdentityGroupBy {
+  @Field(() => String, { nullable: false })
+  uuid!: string;
 
-    @Field(() => String, {nullable:false})
-    uuid!: string;
+  @Field(() => String, { nullable: false })
+  email!: string;
 
-    @Field(() => String, {nullable:false})
-    email!: string;
+  @Field(() => String, { nullable: false })
+  password!: string;
 
-    @Field(() => String, {nullable:false})
-    password!: string;
+  @Field(() => UserIdentityCountAggregate, { nullable: true })
+  _count?: UserIdentityCountAggregate;
 
-    @Field(() => UserIdentityCountAggregate, {nullable:true})
-    _count?: UserIdentityCountAggregate;
+  @Field(() => UserIdentityMinAggregate, { nullable: true })
+  _min?: UserIdentityMinAggregate;
 
-    @Field(() => UserIdentityMinAggregate, {nullable:true})
-    _min?: UserIdentityMinAggregate;
-
-    @Field(() => UserIdentityMaxAggregate, {nullable:true})
-    _max?: UserIdentityMaxAggregate;
+  @Field(() => UserIdentityMaxAggregate, { nullable: true })
+  _max?: UserIdentityMaxAggregate;
 }

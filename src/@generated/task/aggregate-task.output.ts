@@ -6,13 +6,12 @@ import { TaskMaxAggregate } from './task-max-aggregate.output';
 
 @ObjectType()
 export class AggregateTask {
+  @Field(() => TaskCountAggregate, { nullable: true })
+  _count?: TaskCountAggregate;
 
-    @Field(() => TaskCountAggregate, {nullable:true})
-    _count?: TaskCountAggregate;
+  @Field(() => TaskMinAggregate, { nullable: true })
+  _min?: TaskMinAggregate;
 
-    @Field(() => TaskMinAggregate, {nullable:true})
-    _min?: TaskMinAggregate;
-
-    @Field(() => TaskMaxAggregate, {nullable:true})
-    _max?: TaskMaxAggregate;
+  @Field(() => TaskMaxAggregate, { nullable: true })
+  _max?: TaskMaxAggregate;
 }

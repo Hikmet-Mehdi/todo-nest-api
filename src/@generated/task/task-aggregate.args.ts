@@ -11,29 +11,28 @@ import { TaskMaxAggregateInput } from './task-max-aggregate.input';
 
 @ArgsType()
 export class TaskAggregateArgs {
+  @Field(() => TaskWhereInput, { nullable: true })
+  @Type(() => TaskWhereInput)
+  where?: TaskWhereInput;
 
-    @Field(() => TaskWhereInput, {nullable:true})
-    @Type(() => TaskWhereInput)
-    where?: TaskWhereInput;
+  @Field(() => [TaskOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<TaskOrderByWithRelationInput>;
 
-    @Field(() => [TaskOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<TaskOrderByWithRelationInput>;
+  @Field(() => TaskWhereUniqueInput, { nullable: true })
+  cursor?: TaskWhereUniqueInput;
 
-    @Field(() => TaskWhereUniqueInput, {nullable:true})
-    cursor?: TaskWhereUniqueInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => TaskCountAggregateInput, { nullable: true })
+  _count?: TaskCountAggregateInput;
 
-    @Field(() => TaskCountAggregateInput, {nullable:true})
-    _count?: TaskCountAggregateInput;
+  @Field(() => TaskMinAggregateInput, { nullable: true })
+  _min?: TaskMinAggregateInput;
 
-    @Field(() => TaskMinAggregateInput, {nullable:true})
-    _min?: TaskMinAggregateInput;
-
-    @Field(() => TaskMaxAggregateInput, {nullable:true})
-    _max?: TaskMaxAggregateInput;
+  @Field(() => TaskMaxAggregateInput, { nullable: true })
+  _max?: TaskMaxAggregateInput;
 }

@@ -12,32 +12,31 @@ import { UserAccountMaxAggregateInput } from './user-account-max-aggregate.input
 
 @ArgsType()
 export class UserAccountGroupByArgs {
+  @Field(() => UserAccountWhereInput, { nullable: true })
+  @Type(() => UserAccountWhereInput)
+  where?: UserAccountWhereInput;
 
-    @Field(() => UserAccountWhereInput, {nullable:true})
-    @Type(() => UserAccountWhereInput)
-    where?: UserAccountWhereInput;
+  @Field(() => [UserAccountOrderByWithAggregationInput], { nullable: true })
+  orderBy?: Array<UserAccountOrderByWithAggregationInput>;
 
-    @Field(() => [UserAccountOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<UserAccountOrderByWithAggregationInput>;
+  @Field(() => [UserAccountScalarFieldEnum], { nullable: false })
+  by!: Array<keyof typeof UserAccountScalarFieldEnum>;
 
-    @Field(() => [UserAccountScalarFieldEnum], {nullable:false})
-    by!: Array<keyof typeof UserAccountScalarFieldEnum>;
+  @Field(() => UserAccountScalarWhereWithAggregatesInput, { nullable: true })
+  having?: UserAccountScalarWhereWithAggregatesInput;
 
-    @Field(() => UserAccountScalarWhereWithAggregatesInput, {nullable:true})
-    having?: UserAccountScalarWhereWithAggregatesInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => UserAccountCountAggregateInput, { nullable: true })
+  _count?: UserAccountCountAggregateInput;
 
-    @Field(() => UserAccountCountAggregateInput, {nullable:true})
-    _count?: UserAccountCountAggregateInput;
+  @Field(() => UserAccountMinAggregateInput, { nullable: true })
+  _min?: UserAccountMinAggregateInput;
 
-    @Field(() => UserAccountMinAggregateInput, {nullable:true})
-    _min?: UserAccountMinAggregateInput;
-
-    @Field(() => UserAccountMaxAggregateInput, {nullable:true})
-    _max?: UserAccountMaxAggregateInput;
+  @Field(() => UserAccountMaxAggregateInput, { nullable: true })
+  _max?: UserAccountMaxAggregateInput;
 }

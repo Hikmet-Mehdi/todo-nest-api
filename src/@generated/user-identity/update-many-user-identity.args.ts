@@ -6,12 +6,11 @@ import { UserIdentityWhereInput } from './user-identity-where.input';
 
 @ArgsType()
 export class UpdateManyUserIdentityArgs {
+  @Field(() => UserIdentityUpdateManyMutationInput, { nullable: false })
+  @Type(() => UserIdentityUpdateManyMutationInput)
+  data!: UserIdentityUpdateManyMutationInput;
 
-    @Field(() => UserIdentityUpdateManyMutationInput, {nullable:false})
-    @Type(() => UserIdentityUpdateManyMutationInput)
-    data!: UserIdentityUpdateManyMutationInput;
-
-    @Field(() => UserIdentityWhereInput, {nullable:true})
-    @Type(() => UserIdentityWhereInput)
-    where?: UserIdentityWhereInput;
+  @Field(() => UserIdentityWhereInput, { nullable: true })
+  @Type(() => UserIdentityWhereInput)
+  where?: UserIdentityWhereInput;
 }

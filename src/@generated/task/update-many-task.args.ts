@@ -6,12 +6,11 @@ import { TaskWhereInput } from './task-where.input';
 
 @ArgsType()
 export class UpdateManyTaskArgs {
+  @Field(() => TaskUpdateManyMutationInput, { nullable: false })
+  @Type(() => TaskUpdateManyMutationInput)
+  data!: TaskUpdateManyMutationInput;
 
-    @Field(() => TaskUpdateManyMutationInput, {nullable:false})
-    @Type(() => TaskUpdateManyMutationInput)
-    data!: TaskUpdateManyMutationInput;
-
-    @Field(() => TaskWhereInput, {nullable:true})
-    @Type(() => TaskWhereInput)
-    where?: TaskWhereInput;
+  @Field(() => TaskWhereInput, { nullable: true })
+  @Type(() => TaskWhereInput)
+  where?: TaskWhereInput;
 }

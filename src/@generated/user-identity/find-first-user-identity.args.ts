@@ -9,23 +9,22 @@ import { UserIdentityScalarFieldEnum } from './user-identity-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstUserIdentityArgs {
+  @Field(() => UserIdentityWhereInput, { nullable: true })
+  @Type(() => UserIdentityWhereInput)
+  where?: UserIdentityWhereInput;
 
-    @Field(() => UserIdentityWhereInput, {nullable:true})
-    @Type(() => UserIdentityWhereInput)
-    where?: UserIdentityWhereInput;
+  @Field(() => [UserIdentityOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<UserIdentityOrderByWithRelationInput>;
 
-    @Field(() => [UserIdentityOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<UserIdentityOrderByWithRelationInput>;
+  @Field(() => UserIdentityWhereUniqueInput, { nullable: true })
+  cursor?: UserIdentityWhereUniqueInput;
 
-    @Field(() => UserIdentityWhereUniqueInput, {nullable:true})
-    cursor?: UserIdentityWhereUniqueInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [UserIdentityScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof UserIdentityScalarFieldEnum>;
+  @Field(() => [UserIdentityScalarFieldEnum], { nullable: true })
+  distinct?: Array<keyof typeof UserIdentityScalarFieldEnum>;
 }

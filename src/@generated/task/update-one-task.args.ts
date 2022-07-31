@@ -6,12 +6,11 @@ import { TaskWhereUniqueInput } from './task-where-unique.input';
 
 @ArgsType()
 export class UpdateOneTaskArgs {
+  @Field(() => TaskUpdateInput, { nullable: false })
+  @Type(() => TaskUpdateInput)
+  data!: TaskUpdateInput;
 
-    @Field(() => TaskUpdateInput, {nullable:false})
-    @Type(() => TaskUpdateInput)
-    data!: TaskUpdateInput;
-
-    @Field(() => TaskWhereUniqueInput, {nullable:false})
-    @Type(() => TaskWhereUniqueInput)
-    where!: TaskWhereUniqueInput;
+  @Field(() => TaskWhereUniqueInput, { nullable: false })
+  @Type(() => TaskWhereUniqueInput)
+  where!: TaskWhereUniqueInput;
 }

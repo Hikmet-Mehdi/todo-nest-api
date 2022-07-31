@@ -6,13 +6,12 @@ import { UserIdentityMaxAggregate } from './user-identity-max-aggregate.output';
 
 @ObjectType()
 export class AggregateUserIdentity {
+  @Field(() => UserIdentityCountAggregate, { nullable: true })
+  _count?: UserIdentityCountAggregate;
 
-    @Field(() => UserIdentityCountAggregate, {nullable:true})
-    _count?: UserIdentityCountAggregate;
+  @Field(() => UserIdentityMinAggregate, { nullable: true })
+  _min?: UserIdentityMinAggregate;
 
-    @Field(() => UserIdentityMinAggregate, {nullable:true})
-    _min?: UserIdentityMinAggregate;
-
-    @Field(() => UserIdentityMaxAggregate, {nullable:true})
-    _max?: UserIdentityMaxAggregate;
+  @Field(() => UserIdentityMaxAggregate, { nullable: true })
+  _max?: UserIdentityMaxAggregate;
 }

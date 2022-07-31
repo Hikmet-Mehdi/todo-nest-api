@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateOneTaskArgs {
-
-    @Field(() => TaskCreateInput, {nullable:false})
-    @Type(() => TaskCreateInput)
-    data!: TaskCreateInput;
+  @Field(() => TaskCreateInput, { nullable: false })
+  @Type(() => TaskCreateInput)
+  data!: TaskCreateInput;
 }
