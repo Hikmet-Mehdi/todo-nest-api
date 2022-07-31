@@ -2,7 +2,6 @@ export { AffectedRows } from './affected-rows.output';
 export { DateTimeFieldUpdateOperationsInput } from './date-time-field-update-operations.input';
 export { DateTimeFilter } from './date-time-filter.input';
 export { DateTimeWithAggregatesFilter } from './date-time-with-aggregates-filter.input';
-export { IntFilter } from './int-filter.input';
 export { NestedDateTimeFilter } from './nested-date-time-filter.input';
 export { NestedDateTimeWithAggregatesFilter } from './nested-date-time-with-aggregates-filter.input';
 export { NestedIntFilter } from './nested-int-filter.input';
