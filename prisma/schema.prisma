@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/prisma-client-js"
+}
+
+generator nestgraphql {
+    provider = "node node_modules/prisma-nestjs-graphql"
+    // for yarn monorepos
+    // provider = "prisma-nestjs-graphql"
+    reExport = All
+    output = "../src/@generated"
+    combineScalarFilters = true
+    requireSingleFieldsInWhereUniqueInput = true
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// model Workspace {
+//   uuid        String   @id @default(uuid())
+//   title       String
+//   description String?
+//   createdAt   DateTime @default(now()) @map("created_at")
+//   updatedAt   DateTime @updatedAt @map("updated_at")
+//   tasks       Task[]
+
+//   @@map("workspaces")
+// }
+
+model Task {
+  uuid          String    @id @default(uuid())
+  title         String
+  description   String?
+  code          String
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+
+  @@map("tasks")
+}
+
+// model UserAccount {
+//   uuid      String @id @default(uuid())
+//   firstName String @map("first_name")
+//   lastName  String @map("last_name")
+//   email     String @unique
+  
+//   @@map("user_account")
+// }
